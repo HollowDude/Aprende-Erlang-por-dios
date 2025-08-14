@@ -1,0 +1,3 @@
+# 1.0 Que es realmente?
+
+Bueno, si la concurrencia tan alta de Erlang es una parte de su grandeza y el buen manejo de errores(Debo aun un capitulo entero a ello, estuve leyendo bastante sobre el tema en learnyousomeerlang.com pero no lo lleve a la practica casi en lo mas mínimo y menos lo documente) es una segunda parte, entonces podemos decir que el OTP(stands for Open Telecom Platform) es la pieza faltante para que este sea el lenguaje ideal.
