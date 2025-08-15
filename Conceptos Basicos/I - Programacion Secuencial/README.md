@@ -1,9 +1,12 @@
 ## I - Programacion Secuencial Basica
 
 1. ***El shell de Erlang***
+   
    -Solo escribe "erl" en el PowerShell y listo. Puedes hacer sumas y cosas.
    -Con `halt()` puedes salir directamente
+   
 2. ***Modulos y funciones***
+ 
 	-Los archivos tienen la ext  ".erl".
 	-El modulo usado debe tener el mismo nombre del archivo, en este caso le ponen "tut" y asi quedaria:
 	```erlang
@@ -64,6 +67,7 @@
 	```
 	-Notese que las variables se deben declarar con una letra mayuscula al principio.
 3. ***Atoms***
+   
 	Los *Atoms* son otro tipo de datos en erlang, estos en deferencia de las variables comienzan con una letra minuscula y son solo nombres, nada se les asigna, nada mas, solo nombres.
 	A continuacion un codigo util para convertir de inch a cm:
 	```erlang
@@ -90,6 +94,7 @@
 	```
 	-Las dos partes de la funcion convert() son llamadas clausulas, cada una se identifica por su atomo.
 4. ***Tuplas***
+
 	 Para hacer las cosas mas entendibles y separarlas mejor ***erlang*** usa las ***tuplas***, y se denotan con `{}` 
 	 Entonces en el caso de la funcion para convertir y tal tenemos el problema de que es algo confuso el tema de los parametros que recibe, `(3, inches)` por ejemplo significaria que convertira *3 cms a inch o 3 inch a cms*. Para aclararlo lo separaremos en ***tuplas***:
 	```erlang
@@ -119,6 +124,7 @@
 	{paris, {f, 28}}
 	```
 5. ***Listas***
+   
 	Aca las listas se representan como `[]` y en ellas se pueden guardar tuplas o los elementos que desees. Se puede hacer una lista de la temperatura de ciudades del mundo:
 	```shell
 	[{moscow, {c, -10}}, {cape_town, {f, 70}}, {stockholm, {c, -4}},
@@ -133,6 +139,7 @@
 	"abc"
 	```
 6. ***Maps***
+   
 	Como en cualquier lenguaje un mapa es un 'set' de un *valor* con su '*key*', se encapsula en `#{}` y va mas o menos asi:
 	```shell
 	#{"key" => 42 }.
@@ -184,6 +191,7 @@
 		`-define(is_channel(V), (is_float(V) andalso V >= 0.0 andalso V =< 1.0)).`
 		-En este caso, verifica que reciba los 4 parametros correctamente y luego asigna a en este caso si la llamas como "color" .
 7. ***Standard Modules***
+   
 	Aca se habla de los modulos que tiene el lenguaje para ayudar a hacer cosas. Como el clasico `io` que tiene para hacer inputs/outputs. Info basica de cada modulo con comando `erl -man` en el shell
 	Para hacer el clasico print seria:
 	```shell
@@ -204,8 +212,11 @@
 	Tabien tenemos `~n` que es para salto de linea
 	Vaya a [[I - 2.9 Larger example]] para un ejemplo completo de esto ultimo.
 8. ***Comments***
+   
 	Con `%%`, si, asi de facil.
+
 9. ***Matching, Guards, and Scope of Variables***
+    
 	Primero esta es una funcion para hayar el valor max y min en una lista:
 	```erlang
 		-module(tut6).
@@ -279,6 +290,7 @@
 	
 	```
 10. ***Mas sobre las listas!***
+    
 	Ahora un ejemplo de como hacer reverse una lista:
 	```erlang
 		-module(tut8).
@@ -314,6 +326,7 @@
 		    [3,2,1]
 	```
 11. ***If and Case***
+    
 	Aquí tienes la traducción resumida y lista para copiar en Obsidian, conservando los  códigos de ejemplo y explicaciones clave:
 	```erlang
 	# Estructuras de control en Erlang: `if` y `case`
