@@ -11,6 +11,7 @@ Guiándome por el libro "Learn You Some Erlang for great good"(LYSE), encontré 
 - Sera una CLI app pero deberá de poder interactuar con otros servicios como uno web.
 
 *La estructura que la app deberá tener seria algo así:*
+
 ![alt](Media/Pasted%20image%2020250721123008.png)
 >Donde el cliente, el event server y los x, y, z son todos procesos.
 
@@ -33,6 +34,7 @@ Guiándome por el libro "Learn You Some Erlang for great good"(LYSE), encontré 
 - Recibir un message de cancelación y eliminarse.
 
 *Aquí hay un grafico que explica mucho mejor todo el flujo:*
+
 ![alt](Media/Pasted%20image%2020250721124230.png)
 >Esto representa todos los procesos que tendremos. Al dibujar todas las flechas aquí y decir que son mensajes hemos escrito un protocolo de alto nivel, o al menos su esqueleto.
 
@@ -41,22 +43,27 @@ Guiándome por el libro "Learn You Some Erlang for great good"(LYSE), encontré 
 Ahora que conocemos como cada proceso o componente de la aplicación debe comportarse y comunicarse seria una muy buena idea hacer una lista de los **messages** que se enviaran y especificar como deberían lucir exactamente.
 
 *Comencemos con la comunicación entre el cliente y el event server:*
+
 ![alt](Media/Pasted%20image%2020250721125510.png)
 >Nótese que entre el cliente y el servidor hay un monitoreo bilateral. Usaremos dos monitores porque la dependencia no es obvia entre el cliente y el servidor ya que el cliente no puede o no tiene sentido que exista sin el servidor pero el servidor puede hacerlo sin un cliente.
 
 *Siguiente message:*
+
 ![alt](Media/Pasted%20image%2020250721222838.png)
 >Este message envía la orden de crear un evento al servidor, siendo respondido con el átomo "ok" a no ser que haya un error.
 
 *La operación inversa para remover un evento:*
+
 ![alt](Media/Pasted%20image%2020250721223102.png)
 >
 
 *Además el servidor deberá poder enviar una notificación cuando el evento se termine:*
+
 ![alt](Media/Pasted%20image%2020250721223243.png)
 > 
 
 *En todo caso solo necesitaremos los siguientes dos messages para cuando queramos apagar el servidor, o cuando se caiga por errores:*
+
 ![alt](Media/Pasted%20image%2020250721223832.png)
 >No se envía una confirmación mas directa cuando el servidor muere ya que el monitoreo se encargara personalmente de alertarnos.
 
@@ -65,14 +72,17 @@ Ahora que conocemos como cada proceso o componente de la aplicación debe compor
 > Ahora lidiaremos con los messages entre el servidor y los procesos evento. Un punto importante para destacar antes de fajarnos con todo esto es que seria muy buena idea tener un enlace directo entre el servidor y los procesos evento, esto porque queremos claramente que todos los eventos mueran si el server así lo hace.
 
 *Bueno! Cuando un servidor crea un evento, este deberá asignarle un identificador especial(El nombre del evento), cuando el tiempo de alguno de estos eventos termine deberán enviar un mensaje al servidor diciéndolo:*
+
 ![alt](Media/Pasted%20image%2020250721232514.png)
 >
 
 *Por otro lado el evento deberá velar por messages de cancelación por parte del servidor:*
+
 ![alt](Media/Pasted%20image%2020250722003544.png)
 >
 
 *Para culminar necesitaremos un ultimo message para nuestro protocolo. El que nos permitirá mejorar nuestro servidor:*
+
 ![alt](Media/Pasted%20image%2020250722005100.png)
 >No es necesaria una respuesta. Cuando estemos codeando nos daremos cuenta de por que.
 
@@ -583,6 +593,7 @@ A continuación viene el mensaje de cambio de código. Este es lo suficientement
 
 Para realizar la carga de código activo, Erlang cuenta con el servidor de código. Este servidor es básicamente un proceso de la máquina virtual (VM) encargado de una tabla ETS (una tabla de base de datos en memoria, nativa de la VM, que se describe más adelante en el Capítulo 25(Del libro)). El servidor de código puede almacenar dos versiones de un mismo módulo en memoria, y ambas versiones pueden ejecutarse simultáneamente. Una nueva versión de un módulo se carga automáticamente al compilarlo con `c(Módulo)`, al cargarlo con `l(Módulo)` o al cargarlo con una de las muchas funciones del módulo de código, sobre las que puede consultar la documentación de Erlang.
 Un concepto importante es que Erlang tiene llamadas locales y externas. Las llamadas locales son aquellas llamadas a funciones que pueden realizarse con funciones que no se pueden exportar. Tienen el formato Nombre(Argumentos). Una llamada externa solo se puede realizar con funciones exportadas y tiene la forma Módulo:Función(Argumentos). El nombre exacto de una llamada externa es llamada completa. Cuando hay dos versiones de un módulo cargadas en la máquina virtual, todas las llamadas locales se realizan a través de la versión que se está ejecutando en un proceso. Sin embargo, las llamadas completas siempre se realizan en la versión más reciente del código disponible en el servidor de código. Por lo tanto, si las llamadas locales se realizan desde la versión completa, se realizan en la nueva versión del código.
+
 ![alt](Media/Pasted%20image%2020250814064139.png)
 >Dado que cada proceso/actor en Erlang necesita realizar una llamada recursiva para cambiar de estado, es posible cargar versiones completamente nuevas de un actor mediante una llamada recursiva externa.
 
