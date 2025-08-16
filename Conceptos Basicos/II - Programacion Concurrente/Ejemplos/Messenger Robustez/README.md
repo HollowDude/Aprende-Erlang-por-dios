@@ -1,6 +1,3 @@
-
----
-
 # 📒 Messenger — Ejemplo con Robustez
 
 ## 📌 Interfaz de Usuario
