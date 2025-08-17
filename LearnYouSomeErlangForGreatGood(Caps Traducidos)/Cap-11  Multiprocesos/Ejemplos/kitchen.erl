@@ -30,4 +30,6 @@ fridge2(FoodList) ->
         end;
       terminate ->
         ok
+      after 3000 ->
+        timeout
     end.
