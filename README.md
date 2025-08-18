@@ -6,8 +6,6 @@ Este repositorio es un proyecto personal para **aprender Erlang desde cero** y, 
 
 ## 📑 Índice
 
-- [📚 Aprende Erlang desde cero c;](#-aprende-erlang-desde-cero-c)
-  - [📑 Índice](#-índice)
   - [📖 Introducción](#-introducción)
   - [📌 Contenido](#-contenido)
   - [📌 Temas cubiertos](#-temas-cubiertos)
@@ -23,7 +21,7 @@ El material aquí recopilado proviene de diferentes fuentes, con traducciones y 
 
 La principal referencia inicial fue un artículo en **[dev_docs](https://devdocs.io/erlang~26/doc/getting_started/intro)** que introduce los fundamentos de la programación en Erlang. Además, estoy leyendo **[Learn You Some Erlang for Great Good!](https://learnyousomeerlang.com/)** y, cuando encuentro un capítulo relevante, lo traduzco y resumo aquí.  
 
-Por ahora, he trabajado especialmente el **Capítulo 14**, que describe la creación de una aplicación concurrente compleja y muy bien explicada.
+Por ahora, he trabajado especialmente el **Capítulo 13**, que describe la creación de una aplicación concurrente compleja y muy bien explicada.
 
 ---
 
