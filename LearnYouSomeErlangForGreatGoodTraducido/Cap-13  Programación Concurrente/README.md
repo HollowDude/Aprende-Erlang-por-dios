@@ -1,7 +1,7 @@
 ## Diseñando una Aplicación Concurrente
 ### Entendiendo el problema 
 
-Guiándome por el libro "Learn You Some Erlang for great good"(LYSE), encontré un muy buen capitulo dedicado al asunto de la concurrencia. En este se propone hacer una aplicación que sirva para crear recordatorios y alarmas para los mismos.
+ En este capitulo se propone hacer una aplicación que sirva para crear recordatorios y alarmas para practicar todo lo aprendido ahasta hora de concurrencia.
 
 ***Para empezar el software debe permitir**:*
 - Añadir eventos, los cuales se denominaran desde ahora "Procesos x, y, z..." y cada uno tendrá una fecha tope, un nombre y descripción .

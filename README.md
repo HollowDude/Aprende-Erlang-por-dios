@@ -6,9 +6,12 @@ Este repositorio es un proyecto personal para **aprender Erlang desde cero** y, 
 
 ## 📑 Índice
 
+- [📚 Aprende Erlang desde cero c;](#-aprende-erlang-desde-cero-c)
+  - [📑 Índice](#-índice)
   - [📖 Introducción](#-introducción)
   - [📌 Contenido](#-contenido)
   - [📌 Temas cubiertos](#-temas-cubiertos)
+  - [📌 Learn You Some Erlang For Great Good(Traducciones y ejercicios por capitulos)](#-learn-you-some-erlang-for-great-goodtraducciones-y-ejercicios-por-capitulos)
   - [📌 Objetivo del proyecto](#-objetivo-del-proyecto)
   - [🤝 Colaboración (Importante!)](#-colaboración-importante)
   - [Plan futuro](#plan-futuro)
@@ -17,11 +20,9 @@ Este repositorio es un proyecto personal para **aprender Erlang desde cero** y, 
 
 ## 📖 Introducción
 
-El material aquí recopilado proviene de diferentes fuentes, con traducciones y resúmenes que e hecho en su mayoria de forma manual, a veces asistidos por herramientas como traductores automáticos o incluso ChatGPT.  
+El material aquí recopilado proviene de diferentes fuentes, con traducciones y resúmenes que e hecho en su mayoria de forma manual, a veces asistidos por herramientas como traductores automáticos o incluso ChatGPT(Por lo que son posibles fallas en las traducciones o explicaciones pobres en casos puntuales).  
 
-La principal referencia inicial fue un artículo en **[dev_docs](https://devdocs.io/erlang~26/doc/getting_started/intro)** que introduce los fundamentos de la programación en Erlang. Además, estoy leyendo **[Learn You Some Erlang for Great Good!](https://learnyousomeerlang.com/)** y, cuando encuentro un capítulo relevante, lo traduzco y resumo aquí.  
-
-Por ahora, he trabajado especialmente el **Capítulo 13**, que describe la creación de una aplicación concurrente compleja y muy bien explicada.
+La principal referencia inicial fue un artículo en **[dev_docs](https://devdocs.io/erlang~26/doc/getting_started/intro)** que introduce los fundamentos de la programación en Erlang. Además, para poder tocar temas no tan basicos se esta traduciendo todo lo posible de **[Learn You Some Erlang for Great Good!](https://learnyousomeerlang.com/)** a partir del **capitulo 11**.
 
 ---
 
@@ -30,7 +31,6 @@ Por ahora, he trabajado especialmente el **Capítulo 13**, que describe la creac
 Cada tema incluye:
 - Ejemplos resueltos
 - Ejercicios prácticos
-- Explicaciones claras y resumidas
 
 ---
 
@@ -40,6 +40,16 @@ Cada tema incluye:
 2. [Programacion Concurrente](Conceptos%20Basicos/II%20-%20Programacion%20Concurrente/)  
 3. [Robustez](Conceptos%20Basicos/III%20-%20Robustez/)  
 4. [Records & Macros](Conceptos%20Basicos/IV%20-%20Records%20&%20Macros/)  
+
+
+---
+
+## 📌 Learn You Some Erlang For Great Good(Traducciones y ejercicios por capitulos)
+
+1. [Cap.11 Multiprocesos](LearnYouSomeErlangForGreatGoodTraducido/Cap-11%20%20Multiprocesos/)  
+2. [Cap.12 Errores y Procesos](LearnYouSomeErlangForGreatGoodTraducido/Cap-12%20Errores%20y%20Procesos/)  
+3. [Cap.13 Programación Concurrente](LearnYouSomeErlangForGreatGoodTraducido/Cap-13%20%20Programación%20Concurrente/)  
+4. [Cap.14 OTP a Fondo](LearnYouSomeErlangForGreatGoodTraducido/Cap-14%20OTP%20A%20Fondo/)  
 
 
 ---
